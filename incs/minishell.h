@@ -5,13 +5,23 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
+# include "../libftprintf/includes/libft.h"
+# include "../libftprintf/includes/get_next_line.h"
+# include "../libftprintf/includes/ft_printf.h"
+# include <unistd.h>
+# include <locale.h>
+
 typedef struct s_programs {
     char *name;
     void (*program_manager)(char **);
 } t_programs;
 
-extern t_programs programs[];
+typedef struct s_stuff {
+    char **env;
+} t_stuff;
 
+extern t_programs programs[];
+extern t_stuff stuff;
 void ft_echo(char **args);
 void ft_cd(char **args);
 void ft_setenv(char **args);
