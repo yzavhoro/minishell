@@ -17,7 +17,7 @@ SRC_DIR := ./srcs/
 OBJ_DIR := ./objects/
 INC_DIR := ./incs/
 
-SRCS := main.c
+SRCS := main.c ft_env.c ft_setenv.c utils.c
 OBJ = $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 
 CC := gcc
