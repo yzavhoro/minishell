@@ -13,9 +13,6 @@ void ft_echo(char **args) {
     ft_putendl("program not realized yet, but here's some flowers 4 u:");
     ft_printf("🌸🌸🌸🌸🌸🌸\n");
 };
-void ft_cd(char **args) {
-    ft_putendl("no");
-};
 
 void ft_unsetenv(char **args){
     ft_putendl("no");
@@ -61,6 +58,8 @@ int main(int argc, char **argv, char **env) {
     char *cmd;
     stuff.env = env;
     stuff.paths = get_paths(env);
+    getcwd(stuff.curr_dir, WD_SIZE);
+    ft_putendl(stuff.curr_dir);
     setlocale(LC_ALL, "");
     while (1) {
         display_prompt();

@@ -11,6 +11,8 @@
 # include <unistd.h>
 # include <locale.h>
 
+# define WD_SIZE 1025
+
 typedef struct s_programs {
     char *name;
     void (*program_manager)(char **);
@@ -19,6 +21,7 @@ typedef struct s_programs {
 typedef struct s_stuff {
     char **env;
     char **paths;
+    char curr_dir[WD_SIZE];
 } t_stuff;
 
 extern t_programs programs[];
