@@ -5,16 +5,16 @@
 #include <dirent.h>
 #include "../incs/minishell.h"
 
-char **get_paths(char **env) {
+char **get_paths() {
 	int i;
 
 	i = 0;
-    while (env[i] && ft_strncmp(env[i], "PATH=", 5))
+    while (stuff.env[i] && ft_strncmp(stuff.env[i], "PATH=", 5))
         i++;
-    if (!env[i]) {
+    if (!stuff.env[i]) {
         return NULL;
     }
-    return (ft_strsplit(env[i] + 5, ':'));
+    return (ft_strsplit(stuff.env[i] + 5, ':'));
 }
 
 void exec_bin(char *file, char **args) {

@@ -22,6 +22,7 @@ typedef struct s_stuff {
     char **env;
     char **paths;
     char curr_dir[WD_SIZE];
+    char *home;
 } t_stuff;
 
 extern t_programs programs[];
@@ -34,7 +35,8 @@ void ft_unsetenv(char **args);
 void ft_env(char **args);
 void ft_exit(char **args);
 
-char **get_paths(char **env);
+char **get_paths();
 void search_bin(char *cmd, char **args);
+char *convert_env_var(char *var);
 
 #endif

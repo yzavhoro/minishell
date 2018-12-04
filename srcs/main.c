@@ -57,9 +57,9 @@ void manage_command(char *cmd) {
 int main(int argc, char **argv, char **env) {
     char *cmd;
     stuff.env = env;
-    stuff.paths = get_paths(env);
+    stuff.paths = get_paths();
+    stuff.home = convert_env_var("$HOME");
     getcwd(stuff.curr_dir, WD_SIZE);
-    ft_putendl(stuff.curr_dir);
     setlocale(LC_ALL, "");
     while (1) {
         display_prompt();
